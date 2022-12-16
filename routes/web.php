@@ -15,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/saber', function () {
+
+    $sabers = config('db.sabers');
+    //dd($sabers);
+    return view('saber', compact('sabers'));
+})->name('saber');
